@@ -1,4 +1,5 @@
 import Action from "@/components/user/Action";
+import { isBlockedByUser } from "@/lib/block";
 import { isFollowingUser } from "@/lib/follow";
 import { getUserByUsername } from "@/lib/getbyusername";
 import { notFound } from "next/navigation";
@@ -18,6 +19,7 @@ const Page: React.FC<PageProps> = async ({ params }) => {
   }
 
   const isFollowing = await isFollowingUser(user.id);
+  const isBlocked = await isBlockedByUser(user.id);
 
   return (
     <div>

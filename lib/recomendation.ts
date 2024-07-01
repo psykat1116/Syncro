@@ -22,9 +22,18 @@ export const getRecommendations = async () => {
           },
           {
             NOT: {
-              followers: {
+              followedBy: {
                 some: {
                   followerId: userId,
+                },
+              },
+            },
+          },
+          {
+            NOT: {
+              blocking: {
+                some: {
+                  blockedId: userId,
                 },
               },
             },
