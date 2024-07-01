@@ -10,15 +10,15 @@ interface RecommendedProps {
 
 const Recommended = ({ data }: RecommendedProps) => {
   const { collapsed } = useSidebar();
-  //   const showLabel = !collapsed && data.length > 0;
+    const showLabel = !collapsed && data.length > 0;
   return (
     <div>
-      {/* {showLabel && (
-        <div className="pl-3 mb-4 -mt-2">
+      {showLabel && (
+        <div className="pl-3 mb-4">
           <p className="text-sm text-muted-foreground">Recommended</p>
         </div>
-      )} */}
-      <ul className="space-y-2 -mt-2">
+      )}
+      <ul className="space-y-2">
         {data.map((user) => (
           <UserItem
             key={user.id}
@@ -35,7 +35,7 @@ const Recommended = ({ data }: RecommendedProps) => {
 export const RecommendedSkeleton = () => {
   return (
     <ul className="px-2">
-      {[...Array(5)].map((_, i) => (
+      {[...Array(3)].map((_, i) => (
         <UserItemSkeleton key={i} />
       ))}
     </ul>

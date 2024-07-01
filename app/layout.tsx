@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 import { dark } from "@clerk/themes";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/provider/ThemeProvider";
+import { Toaster } from "sonner";
 
 import "./globals.css";
 
@@ -54,7 +55,14 @@ export default function RootLayout({
     <ClerkProvider appearance={{ baseTheme: dark }}>
       <html lang="en">
         <body className={poppins.className}>
-          <ThemeProvider attribute="class" forcedTheme="dark" storageKey="syncro-theme">{children}</ThemeProvider>
+          <ThemeProvider
+            attribute="class"
+            forcedTheme="dark"
+            storageKey="syncro-theme"
+          >
+            <Toaster theme="light" position="bottom-center" />
+            {children}
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>

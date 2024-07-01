@@ -4,7 +4,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeftFromLine, ArrowRightFromLine } from "lucide-react";
 import Hint from "../Hint";
-import { Skeleton } from "../ui/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const Toggle = () => {
   const { collapsed, onCollapse, onExpand } = useSidebar();
@@ -13,7 +13,6 @@ const Toggle = () => {
     <>
       {!collapsed ? (
         <div className="p-1 pl-3 mb-2 flex items-center w-full">
-          <p className="font-semibold text-muted-foreground">Recommended</p>
           <Hint asChild label={label} side="right">
             <Button
               onClick={onCollapse}

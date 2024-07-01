@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { RecommendedSkeleton } from "./Recommended";
 import { ToggleSkeleton } from "./Toggle";
 import { useIsClient } from "usehooks-ts";
+import { FollowingSkeleton } from "./Following";
 
 interface WrapperProps {
   children: React.ReactNode;
@@ -18,6 +19,7 @@ const Wrapper: React.FC<WrapperProps> = ({ children }) => {
     return (
       <aside className="fixed left-0 flex-col flex w-[60px] lg:w-60 h-full bg-background border-r border-[#2d2e35] z-50">
         <ToggleSkeleton />
+        <FollowingSkeleton />
         <RecommendedSkeleton />
       </aside>
     );

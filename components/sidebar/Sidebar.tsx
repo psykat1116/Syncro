@@ -3,13 +3,19 @@ import Wrapper from "./Wrapper";
 import Toggle, { ToggleSkeleton } from "./Toggle";
 import Recommended, { RecommendedSkeleton } from "./Recommended";
 import { getRecommendations } from "@/lib/recomendation";
+import { getFollowedUser } from "@/lib/follow";
+import Following, { FollowingSkeleton } from "./Following";
+import { Separator } from "../ui/separator";
 
 const Sidebar = async () => {
   const recomended = await getRecommendations();
+  const following = await getFollowedUser();
   return (
     <Wrapper>
       <Toggle />
-      <div className="space-y-4 pt-2 lg:-mt-2">
+      <div className="space-y-2 pt-2 lg:pt-0">
+        <Following data={following} />
+        <Separator className="lg:hidden"/>
         <Recommended data={recomended} />
       </div>
     </Wrapper>
@@ -20,6 +26,7 @@ export const SidebarSkeleton = () => {
   return (
     <aside className="fixed left-0 flex flex-col w-[60px] lg:w-60 h-full bg-background border-r border-[#2d2e35] z-50">
       <ToggleSkeleton />
+      <FollowingSkeleton />
       <RecommendedSkeleton />
     </aside>
   );
