@@ -29,7 +29,7 @@ const ToggleCard: React.FC<ToggleCardProps> = ({ field, label, value }) => {
     });
   };
   return (
-    <div className="rounded-xl bg-muted p-6">
+    <div className="rounded-xl bg-muted p-4">
       <div className="flex items-center justify-between">
         <p className="font-semibold shrink-0 truncate">{label}</p>
         <div className="space-y-2">
@@ -47,7 +47,7 @@ const ToggleCard: React.FC<ToggleCardProps> = ({ field, label, value }) => {
 };
 
 export const ToggleCardSkeleton = () => {
-  return <Skeleton className="rounded-xl p-10 w-full" />;
+  return <Skeleton className="rounded-xl p-6 w-full" />;
 };
 
 export default ToggleCard;

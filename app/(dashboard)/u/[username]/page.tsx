@@ -1,9 +1,27 @@
-import React from 'react'
+import StreamPlayer from "@/components/stream/StreamPlayer";
+import { getUserByUsername } from "@/lib/userService";
+import { currentUser } from "@clerk/nextjs/server";
+import React from "react";
 
-const Page = () => {
-  return (
-    <div>Page</div>
-  )
+interface PageProps {
+  params: {
+    username: string;
+  };
 }
 
-export default Page
+const Page = async ({ params }: PageProps) => {
+  const extenralUser = await currentUser();
+  const user = await getUserByUsername(params.username);
+
+  if (!user || user.externalUserId !== extenralUser?.id || !user.stream) {
+    return <div>User not found</div>;
+  }
+
+  return (
+    <div className="h-full">
+      <StreamPlayer user={user} stream={user.stream} isFollowing />
+    </div>
+  );
+};
+
+export default Page;

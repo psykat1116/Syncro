@@ -13,7 +13,7 @@ const Toggle = () => {
   return (
     <>
       {collapsed ? (
-        <div className="hidden lg:flex w-full items-center justify-center pt-2 mb-4">
+        <div className="hidden lg:flex w-full items-center justify-center pt-2 mb-2">
           <Hint asChild label={label} side="right">
             <Button onClick={onExpand} variant="ghost" className="h-auto p-2">
               <ArrowRightFromLine className="h-4 w-4" />
@@ -21,7 +21,8 @@ const Toggle = () => {
           </Hint>
         </div>
       ) : (
-        <div className="p-1 pl-3 mb-2 flex items-center w-full">
+        <div className="p-3 pl-3 flex items-center w-full">
+          <h1 className="text-xl font-semibold">Options</h1>
           <Hint asChild label={label} side="right">
             <Button
               onClick={onCollapse}

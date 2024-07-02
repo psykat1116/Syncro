@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Input } from "../ui/input";
 import CopyButton from "./CopyButton";
 import { Button } from "../ui/button";
+import { Skeleton } from "../ui/skeleton";
 
 interface KeyCardProps {
   value: string | null;
@@ -18,7 +19,9 @@ const KeyCard = ({ value }: KeyCardProps) => {
   return (
     <div className="rounded-xl bg-muted p-4">
       <div className="flex flex-col lg:flex-row items-start gap-y-3 lg:gap-x-10">
-        <p className="font-semibold shrink-0 truncate">Stream Key</p>
+        <p className="font-semibold shrink-0 truncate">
+          Stream Key
+        </p>
         <div className="space-y-2 w-full">
           <div className="w-full flex items-center gap-x-2">
             <Input
@@ -36,6 +39,10 @@ const KeyCard = ({ value }: KeyCardProps) => {
       </div>
     </div>
   );
+};
+
+export const KeyCardSkeleton = () => {
+  return <Skeleton className="rounded-xl p-6 w-full h-20" />;
 };
 
 export default KeyCard;

@@ -1,6 +1,6 @@
 import { db } from "./db";
 import { getSelf } from "./authService";
-import { User } from "@prisma/client";
+import { Stream, User } from "@prisma/client";
 
 export const getRecommendations = async () => {
   let userId;
@@ -10,7 +10,7 @@ export const getRecommendations = async () => {
   } catch (error) {
     userId = null;
   }
-  let users: User[] = [];
+  let users: (User & { stream: { isLive: boolean } | null })[] = [];
   if (userId) {
     users = await db.user.findMany({
       where: {
@@ -40,11 +40,30 @@ export const getRecommendations = async () => {
           },
         ],
       },
+      include: {
+        stream: {
+          select: {
+            isLive: true,
+          },
+        },
+      },
       orderBy: {
         createdAt: "desc",
       },
     });
   } else {
+    users = await db.user.findMany({
+      include: {
+        stream: {
+          select: {
+            isLive: true,
+          },
+        },
+      },
+      orderBy: {
+        createdAt: "desc",
+      },
+    });
   }
   return users;
 };

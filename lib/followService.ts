@@ -11,12 +11,20 @@ export const getFollowedUser = async () => {
           blocking: {
             none: {
               blockedId: self.id,
-            }
-          }
-        }
+            },
+          },
+        },
       },
       include: {
-        following: true,
+        following: {
+          include: {
+            stream: {
+              select: {
+                isLive: true,
+              },
+            },
+          },
+        },
       },
     });
     return followedUser;

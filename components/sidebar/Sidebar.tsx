@@ -1,11 +1,13 @@
 import React from "react";
+
 import Wrapper from "./Wrapper";
 import Toggle, { ToggleSkeleton } from "./Toggle";
 import Recommended, { RecommendedSkeleton } from "./Recommended";
-import { getRecommendations } from "@/lib/recomendation";
-import { getFollowedUser } from "@/lib/follow";
 import Following, { FollowingSkeleton } from "./Following";
-import { Separator } from "../ui/separator";
+
+import { getRecommendations } from "@/lib/recomendation";
+import { getFollowedUser } from "@/lib/followService";
+import { Separator } from "@/components/ui/separator";
 
 const Sidebar = async () => {
   const recomended = await getRecommendations();
@@ -13,9 +15,10 @@ const Sidebar = async () => {
   return (
     <Wrapper>
       <Toggle />
+      <Separator />
       <div className="space-y-2 pt-2 lg:pt-0">
         <Following data={following} />
-        <Separator className="lg:hidden"/>
+        <Separator className="lg:hidden" />
         <Recommended data={recomended} />
       </div>
     </Wrapper>

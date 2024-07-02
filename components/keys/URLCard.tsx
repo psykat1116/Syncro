@@ -1,6 +1,7 @@
 import React from "react";
-import { Input } from "../ui/input";
+import { Input } from "@/components/ui/input";
 import CopyButton from "./CopyButton";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface URLCardProps {
   value: string | null;
@@ -20,6 +21,10 @@ const URLCard = ({ value }: URLCardProps) => {
       </div>
     </div>
   );
+};
+
+export const URLCardSkeleton = () => {
+  return <Skeleton className="rounded-xl p-6 w-full" />;
 };
 
 export default URLCard;

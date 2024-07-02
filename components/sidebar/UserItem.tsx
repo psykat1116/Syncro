@@ -14,10 +14,10 @@ import LiveBatch from "../LiveBatch";
 interface UserItemProps {
   username: string;
   imageUrl: string;
-  isLive: boolean;
+  isLive?: boolean;
 }
 
-const UserItem = ({ username, imageUrl, isLive }: UserItemProps) => {
+const UserItem = ({ username, imageUrl, isLive = false }: UserItemProps) => {
   const pathname = usePathname();
   const { collapsed } = useSidebar();
   const href = `/${username}`;
