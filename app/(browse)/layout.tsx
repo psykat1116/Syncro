@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import Navbar from "@/components/navbar/Navbar";
 import Sidebar, { SidebarSkeleton } from "@/components/sidebar/Sidebar";
-import Container from "@/components/Container";
+import Container from "@/components/sidebar/Container";
 
 const BrowseLayout = ({ children }: { children: React.ReactNode }) => {
   return (

@@ -62,7 +62,7 @@ const Action = ({ isFollowing, userId }: ActionProps) => {
       >
         {isFollowing ? "Unfollow" : "Follow"}
       </Button>
-      <Button onClick={handleUnBlock} disabled={isPending} variant="primary">
+      <Button onClick={handleBlock} disabled={isPending} variant="primary">
         Block
       </Button>
     </>

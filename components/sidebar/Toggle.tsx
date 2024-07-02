@@ -3,7 +3,7 @@ import { useSidebar } from "@/store/useSidebar";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeftFromLine, ArrowRightFromLine } from "lucide-react";
-import Hint from "../Hint";
+import Hint from "@/components/Hint";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const Toggle = () => {
