@@ -4,7 +4,15 @@ export const getUserByUsername = async (username: string) => {
   const user = await db.user.findUnique({
     where: { username },
     include: {
-      stream: true,
+      stream: {
+        select: {
+          name: true,
+          thumbnailUrl: true,
+          isChatEnabled: true,
+          isChatDelayed: true,
+          isChatFollowersOnly: true,
+        },
+      },
       _count: {
         select: {
           followedBy: true,
@@ -18,8 +26,8 @@ export const getUserByUsername = async (username: string) => {
 export const getUserById = async (id: string) => {
   const user = await db.user.findUnique({
     where: { id },
-    include: {
-      stream: true,
+    select: {
+      id: true,
     },
   });
   return user;

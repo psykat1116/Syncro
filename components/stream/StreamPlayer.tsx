@@ -1,5 +1,5 @@
 "use client";
-import { Stream, User } from "@prisma/client";
+import { User } from "@prisma/client";
 import { LiveKitRoom } from "@livekit/components-react";
 
 import { useChatSidebar } from "@/store/useChatSidebar";
@@ -13,9 +13,20 @@ import Header, { HeaderSkeleton } from "@/components/stream/Header";
 import InfoCard from "./InfoCard";
 import AboutCard from "./AboutCard";
 
+type ModifiedStream = {
+  name: string;
+  thumbnailUrl: string | null;
+  isChatEnabled: boolean;
+  isChatDelayed: boolean;
+  isChatFollowersOnly: boolean;
+};
+
 interface StreamPlayerProps {
-  user: User & { stream: Stream | null; _count: { followedBy: number } };
-  stream: Stream;
+  user: User & {
+    stream: ModifiedStream | null;
+    _count: { followedBy: number };
+  };
+  stream: ModifiedStream;
   isFollowing: boolean;
 }
 

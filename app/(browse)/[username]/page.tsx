@@ -1,9 +1,11 @@
+import React from "react";
+import { notFound } from "next/navigation";
+
 import Action from "@/components/user/Action";
 import { isBlockedByUser } from "@/lib/block";
 import { isFollowingUser } from "@/lib/followService";
 import { getUserByUsername } from "@/lib/userService";
-import { notFound } from "next/navigation";
-import React from "react";
+import StreamPlayer from "@/components/stream/StreamPlayer";
 
 interface PageProps {
   params: {
@@ -14,17 +16,19 @@ interface PageProps {
 const Page: React.FC<PageProps> = async ({ params }) => {
   const user = await getUserByUsername(params.username);
 
-  if (!user) {
-    return notFound();
+  if (!user || !user.stream) {
+    notFound();
   }
 
   const isFollowing = await isFollowingUser(user.id);
   const isBlocked = await isBlockedByUser(user.id);
 
+  if (isBlocked) {
+    notFound();
+  }
+
   return (
-    <div>
-      <Action isFollowing={isFollowing} userId={user.id} />
-    </div>
+    <StreamPlayer user={user} stream={user.stream} isFollowing={isFollowing} />
   );
 };
 

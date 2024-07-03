@@ -63,16 +63,16 @@ const ChatForm = ({
             onChange(e.target.value);
           }}
           value={value}
-          disabled={false}
+          disabled={isDisabled}
           placeholder="Send a Message"
           className={cn(
             "border-white/10",
-            isFollowersOnly && "rounded-t-none border-t-0"
+            (isFollowersOnly || isDelayed) && "rounded-t-none border-t-0"
           )}
         />
       </div>
       <div className="ml-auto">
-        <Button variant="primary" size="sm" disabled={false}>
+        <Button variant="primary" size="sm" disabled={isDisabled}>
           Chat
         </Button>
       </div>

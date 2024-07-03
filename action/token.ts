@@ -34,7 +34,7 @@ export const createViewerToken = async (hostIdentity: string) => {
     process.env.LIVEKIT_API_SECRET!,
     {
       identity: isHost ? `host-${self.id}` : self.id,
-      name: self.username
+      name: self.username,
     }
   );
 
@@ -43,7 +43,7 @@ export const createViewerToken = async (hostIdentity: string) => {
     roomJoin: true,
     canPublish: false,
     canPublishData: true,
-  })
+  });
 
   return await Promise.resolve(token.toJwt());
 };

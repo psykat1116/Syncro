@@ -14,7 +14,7 @@ const Page = async ({ params }: PageProps) => {
   const user = await getUserByUsername(params.username);
 
   if (!user || user.externalUserId !== extenralUser?.id || !user.stream) {
-    return <div>User not found</div>;
+    throw new Error("Unauthorized");
   }
 
   return (
