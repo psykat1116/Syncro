@@ -46,16 +46,21 @@ const InfoCard = ({
           <InfoModal initialName={name} initialThumbnail={thumbnailUrl} />
         </div>
         <Separator />
-        <div className="p-4 lg:p-6 space-y-4">
+        <div className="p-4 lg:p-6 space-y-3">
           <div>
-            <h3 className="text-sm text-muted-foreground mb-2">Name</h3>
+            <h3 className="text-sm text-muted-foreground mb-1">Name</h3>
             <p className="text-sm font-semibold">{name}</p>
           </div>
           <div>
-            <h3 className="text-sm text-muted-foreground mb-2">Thumbnail</h3>
+            <h3 className="text-sm text-muted-foreground mb-1">Thumbnail</h3>
             {thumbnailUrl && (
               <div className="relative aspect-video rounded-md overflow-hidden w-[200px] border border-white/10">
-                <Image fill alt={name} src={thumbnailUrl} className="object-cover"/>
+                <Image
+                  fill
+                  alt={name}
+                  src={thumbnailUrl}
+                  className="object-cover"
+                />
               </div>
             )}
           </div>

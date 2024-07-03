@@ -5,6 +5,11 @@ export const getUserByUsername = async (username: string) => {
     where: { username },
     include: {
       stream: true,
+      _count: {
+        select: {
+          followedBy: true,
+        },
+      },
     },
   });
   return user;
