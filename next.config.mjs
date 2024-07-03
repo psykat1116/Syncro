@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "image.clerk.dev",
       },
+      {
+        protocol: "https",
+        hostname: "utfs.io",
+      },
     ],
   },
 };

@@ -47,7 +47,7 @@ const UserAvatar = ({
         </AvatarFallback>
       </Avatar>
       {canShowBadge && (
-        <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2">
+        <div className="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2">
           <LiveBatch />
         </div>
       )}
