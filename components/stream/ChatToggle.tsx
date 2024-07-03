@@ -7,7 +7,7 @@ import { useChatSidebar } from "@/store/useChatSidebar";
 
 const ChatToggle = () => {
   const { collapsed, onExpand, onCollapse } = useChatSidebar();
-  const Icon = collapsed ? ArrowRightFromLine : ArrowLeftFromLine;
+  const Icon = collapsed ? ArrowLeftFromLine : ArrowRightFromLine;
   const label = collapsed ? "Expand" : "Collapse";
 
   const onToggle = () => {
