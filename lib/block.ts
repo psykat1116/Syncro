@@ -2,31 +2,27 @@ import { db } from "./db";
 import { getSelf } from "./authService";
 
 export const isBlockedByUser = async (id: string) => {
-  try {
-    const self = await getSelf();
-    const otherUser = await db.user.findUnique({
-      where: { id },
-    });
-    if (!self || !otherUser) {
-      return false;
-    }
-    if ((otherUser.id = self.id)) {
-      return false;
-    }
-
-    const existingBlock = await db.block.findUnique({
-      where: {
-        blockerId_blockedId: {
-          blockerId: otherUser.id,
-          blockedId: self.id,
-        },
-      },
-    });
-
-    return !!existingBlock;
-  } catch (error) {
+  const self = await getSelf();
+  const otherUser = await db.user.findUnique({
+    where: { id },
+  });
+  if (!self || !otherUser) {
     return false;
   }
+  if ((otherUser.id === self.id)) {
+    return false;
+  }
+
+  const existingBlock = await db.block.findUnique({
+    where: {
+      blockerId_blockedId: {
+        blockerId: otherUser.id,
+        blockedId: self.id,
+      },
+    },
+  });
+
+  return !!existingBlock;
 };
 
 export const blockUser = async (id: string) => {
@@ -115,4 +111,22 @@ export const unblockUser = async (id: string) => {
   });
 
   return unblock;
+};
+
+export const getBlockedUsers = async () => {
+  const self = await getSelf();
+  if (!self) {
+    return [];
+  }
+
+  const blocks = await db.block.findMany({
+    where: {
+      blockerId: self.id,
+    },
+    include: {
+      blocked: true,
+    },
+  });
+
+  return blocks;
 };

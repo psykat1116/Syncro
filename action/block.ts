@@ -26,7 +26,7 @@ export const onBlock = async (id: string) => {
     } catch (error) {
       // This means user is not in the room
     }
-    
+
     revalidatePath(`/u/${self.username}/community`);
     return blockedUser;
   } catch (error) {
@@ -36,11 +36,11 @@ export const onBlock = async (id: string) => {
 
 export const onUnBlock = async (id: string) => {
   try {
+    const self = await getSelf();
     const unblockedUser = await unblockUser(id);
-    revalidatePath("/");
-    if (unblockedUser) {
-      revalidatePath(`/${unblockedUser.blocked.username}`);
-    }
+
+    revalidatePath(`/u/${self.username}/community`);
+
     return unblockedUser;
   } catch (error) {
     throw new Error("Internal server error");

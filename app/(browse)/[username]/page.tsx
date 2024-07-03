@@ -1,7 +1,6 @@
 import React from "react";
 import { notFound } from "next/navigation";
 
-import Action from "@/components/user/Action";
 import { isBlockedByUser } from "@/lib/block";
 import { isFollowingUser } from "@/lib/followService";
 import { getUserByUsername } from "@/lib/userService";

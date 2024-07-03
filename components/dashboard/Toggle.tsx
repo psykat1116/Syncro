@@ -22,7 +22,7 @@ const Toggle = () => {
         </div>
       ) : (
         <div className="p-3 pl-3 flex items-center w-full">
-          <h1 className="text-xl font-semibold">Options</h1>
+          <h1 className="text-xl font-semibold">Dashboard</h1>
           <Hint asChild label={label} side="right">
             <Button
               onClick={onCollapse}

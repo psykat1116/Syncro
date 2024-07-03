@@ -7,6 +7,7 @@ const isPublicRoute = createRouteMatcher([
   "/api/uploadthing(.*)",
   "/",
   "/:username",
+  "/search"
 ]);
 
 export default clerkMiddleware((auth, req) => {
