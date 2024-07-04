@@ -1,10 +1,11 @@
 "use client";
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useDebounceValue } from "usehooks-ts";
 import { useParticipants } from "@livekit/components-react";
+
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import CommunityItem from "./CommunityItem";
+import CommunityItem from "@/components/stream/CommunityItem";
 import { LocalParticipant, RemoteParticipant } from "livekit-client";
 
 interface ChatCommunityProps {

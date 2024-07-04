@@ -9,7 +9,6 @@ import {
   CreateIngressOptions,
   IngressVideoOptions,
   IngressAudioOptions,
-  IngressInfo,
 } from "livekit-server-sdk";
 
 import { db } from "@/lib/db";

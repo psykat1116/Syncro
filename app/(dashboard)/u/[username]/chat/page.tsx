@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Settings } from "lucide-react";
 
 import ToggleCard from "@/components/chat/ToggleCard";

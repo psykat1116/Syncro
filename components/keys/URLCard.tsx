@@ -1,7 +1,6 @@
-import React from "react";
 import { Input } from "@/components/ui/input";
-import CopyButton from "./CopyButton";
 import { Skeleton } from "@/components/ui/skeleton";
+import CopyButton from "@/components/keys/CopyButton";
 
 interface URLCardProps {
   value: string | null;

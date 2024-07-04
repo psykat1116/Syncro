@@ -1,7 +1,6 @@
-import React from "react";
 import { notFound } from "next/navigation";
 
-import { isBlockedByUser } from "@/lib/block";
+import { isBlockedByUser } from "@/lib/blockService";
 import { isFollowingUser } from "@/lib/followService";
 import { getUserByUsername } from "@/lib/userService";
 import StreamPlayer from "@/components/stream/StreamPlayer";

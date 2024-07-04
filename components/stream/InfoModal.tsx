@@ -1,5 +1,8 @@
-import React, { ElementRef, useRef, useState, useTransition } from "react";
+import { ElementRef, useRef, useState, useTransition } from "react";
 import { toast } from "sonner";
+import Image from "next/image";
+import { Trash } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 import {
   Dialog,
@@ -9,15 +12,12 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Button } from "../ui/button";
-import { Label } from "../ui/label";
-import { Input } from "../ui/input";
+import Hint from "@/components/Hint";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 import { updateStream } from "@/action/stream";
+import { Button } from "@/components/ui/button";
 import { UploadDropzone } from "@/lib/uploadthing";
-import { useRouter } from "next/navigation";
-import Hint from "../Hint";
-import { Trash } from "lucide-react";
-import Image from "next/image";
 
 interface InfoModalProps {
   initialName: string;

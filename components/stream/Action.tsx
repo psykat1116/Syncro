@@ -1,13 +1,14 @@
 "use client";
 import React, { useTransition } from "react";
-import { useRouter } from "next/navigation";
-import { Button } from "../ui/button";
-import { useAuth } from "@clerk/nextjs";
-import { Heart } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { onFollow, onUnfollow } from "@/action/follow";
 import { toast } from "sonner";
-import { Skeleton } from "../ui/skeleton";
+import { Heart } from "lucide-react";
+import { useAuth } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
+
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
+import { onFollow, onUnfollow } from "@/action/follow";
 
 interface ActionProps {
   hostIdentity: string;

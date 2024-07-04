@@ -1,6 +1,6 @@
-import Results, { ResultSkeleton } from "@/components/search/Result";
+import { Suspense } from "react";
 import { redirect } from "next/navigation";
-import React, { Suspense } from "react";
+import Results, { ResultSkeleton } from "@/components/search/Result";
 
 interface PageProps {
   searchParams: {

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
@@ -7,9 +7,8 @@ import { useSidebar } from "@/store/useSidebar";
 
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import Link from "next/link";
-import UserAvatar from "../UserAvatar";
-import LiveBatch from "../LiveBatch";
+import UserAvatar from "@/components/UserAvatar";
+import LiveBatch from "@/components/LiveBatch";
 
 interface UserItemProps {
   username: string;

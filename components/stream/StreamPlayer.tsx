@@ -1,17 +1,16 @@
 "use client";
+import { cn } from "@/lib/utils";
 import { User } from "@prisma/client";
 import { LiveKitRoom } from "@livekit/components-react";
 
+import InfoCard from "@/components/stream/InfoCard";
+import AboutCard from "@/components/stream/AboutCard";
 import { useChatSidebar } from "@/store/useChatSidebar";
 import { useViewerToken } from "@/hooks/useViewerToken";
-import { cn } from "@/lib/utils";
-
-import Video, { VideoSkeleton } from "@/components/stream/Video";
-import Chat, { ChatSkeleton } from "@/components/stream/Chat";
 import ChatToggle from "@/components/stream/ChatToggle";
+import Chat, { ChatSkeleton } from "@/components/stream/Chat";
+import Video, { VideoSkeleton } from "@/components/stream/Video";
 import Header, { HeaderSkeleton } from "@/components/stream/Header";
-import InfoCard from "./InfoCard";
-import AboutCard from "./AboutCard";
 
 type ModifiedStream = {
   name: string;

@@ -1,7 +1,6 @@
 "use client";
-import React from "react";
-import Verified from "../Verified";
-import BioModal from "./BioModal";
+import Verified from "@/components/Verified";
+import BioModal from "@/components/stream/BioModal";
 
 interface AboutCardProps {
   hostName: string;

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { User } from "@prisma/client";
 
+import { Skeleton } from "@/components/ui/skeleton";
 import Thumbnail, { ThumbnailSkeleton } from "@/components/Thumbnail";
 import UserAvatar, { UserAvatarSkeleton } from "@/components/UserAvatar";
-import { Skeleton } from "@/components/ui/skeleton";
 
 interface ResultCardProps {
   data: {

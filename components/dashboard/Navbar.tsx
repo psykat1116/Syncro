@@ -1,6 +1,5 @@
-import React from 'react'
-import Logo from '../navbar/Logo'
-import Action from './Action'
+import Logo from '@/components/navbar/Logo'
+import Action from '@/components/dashboard/Action'
 
 const Navbar = () => {
   return (

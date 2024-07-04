@@ -1,8 +1,9 @@
 "use server";
-import { getSelf } from "@/lib/authService";
-import { blockUser, unblockUser } from "@/lib/block";
-import { RoomServiceClient } from "livekit-server-sdk";
 import { revalidatePath } from "next/cache";
+import { RoomServiceClient } from "livekit-server-sdk";
+
+import { getSelf } from "@/lib/authService";
+import { blockUser, unblockUser } from "@/lib/blockService";
 
 const roomService = new RoomServiceClient(
   process.env.LIVEKIT_API_URL!,

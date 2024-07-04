@@ -1,6 +1,5 @@
 import React from "react";
 import { Skeleton } from "@/components/ui/skeleton";
-import { ToggleCardSkeleton } from "@/components/chat/ToggleCard";
 import { URLCardSkeleton } from "@/components/keys/URLCard";
 import { KeyCardSkeleton } from "@/components/keys/KeyCard";
 

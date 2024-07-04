@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Link } from "lucide-react";
 
 import ConnectModal from "@/components/keys/ConnectModal";

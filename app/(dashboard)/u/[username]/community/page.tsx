@@ -1,8 +1,8 @@
-import { columns } from "@/components/community/ColumnDef";
-import { DataTable } from "@/components/ui/DataTable";
-import { getBlockedUsers } from "@/lib/block";
 import { format } from "date-fns";
-import React from "react";
+
+import { getBlockedUsers } from "@/lib/blockService";
+import { DataTable } from "@/components/ui/DataTable";
+import { columns } from "@/components/community/ColumnDef";
 
 const Page = async () => {
   const data = await getBlockedUsers();

@@ -6,10 +6,10 @@ import {
   useTracks,
 } from "@livekit/components-react";
 
+import { Skeleton } from "@/components/ui/skeleton";
+import LiveVideo from "@/components/stream/LiveVideo";
 import OfflineVideo from "@/components/stream/OfflineVideo";
 import LoadingVideo from "@/components/stream/LoadingVideo";
-import LiveVideo from "@/components/stream/LiveVideo";
-import { Skeleton } from "@/components/ui/skeleton";
 
 interface VideoProps {
   hostname: string;

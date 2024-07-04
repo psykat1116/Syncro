@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-
 import { dark } from "@clerk/themes";
 import { ClerkProvider } from "@clerk/nextjs";
-import { ThemeProvider } from "@/provider/ThemeProvider";
 import { Toaster } from "sonner";
+
+import { ThemeProvider } from "@/provider/ThemeProvider";
 
 import "./globals.css";
 

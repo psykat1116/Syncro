@@ -1,9 +1,10 @@
 "use client";
-import React, { useState } from "react";
-import { Input } from "../ui/input";
-import CopyButton from "./CopyButton";
-import { Button } from "../ui/button";
-import { Skeleton } from "../ui/skeleton";
+import { useState } from "react";
+
+import { Input } from "@/components/ui/input";
+import CopyButton from "@/components/keys/CopyButton";
+import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface KeyCardProps {
   value: string | null;

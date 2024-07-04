@@ -1,9 +1,10 @@
 "use client";
-import React, { useTransition } from "react";
-import { Switch } from "../ui/switch";
-import { updateStream } from "@/action/stream";
 import { toast } from "sonner";
-import { Skeleton } from "../ui/skeleton";
+import React, { useTransition } from "react";
+
+import { Switch } from "@/components/ui/switch";
+import { updateStream } from "@/action/stream";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type FieldTypes = "isChatEnabled" | "isChatDelayed" | "isChatFollowersOnly";
 

@@ -1,10 +1,11 @@
-import { useCreatorSidebar } from "@/store/useCreatorSidebar";
-import { LucideIcon } from "lucide-react";
 import React from "react";
-import { Button } from "../ui/button";
-import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { Skeleton } from "../ui/skeleton";
+import { LucideIcon } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
+import { useCreatorSidebar } from "@/store/useCreatorSidebar";
 
 interface NavItemProps {
   icon: LucideIcon;

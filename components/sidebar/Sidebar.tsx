@@ -1,13 +1,11 @@
-import React from "react";
-
-import Wrapper from "./Wrapper";
-import Toggle, { ToggleSkeleton } from "./Toggle";
-import Recommended, { RecommendedSkeleton } from "./Recommended";
-import Following, { FollowingSkeleton } from "./Following";
+import Wrapper from "@/components/sidebar/Wrapper";
+import Toggle, { ToggleSkeleton } from "@/components/sidebar/Toggle";
+import Recommended, { RecommendedSkeleton } from "@/components/sidebar/Recommended";
+import Following, { FollowingSkeleton } from "@/components/sidebar/Following";
+import { Separator } from "@/components/ui/separator";
 
 import { getRecommendations } from "@/lib/recomendation";
 import { getFollowedUser } from "@/lib/followService";
-import { Separator } from "@/components/ui/separator";
 
 const Sidebar = async () => {
   const recomended = await getRecommendations();

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import { User } from "@prisma/client";
 import { formatDistanceToNow } from "date-fns";
-import { Stream, User } from "@prisma/client";
 
 import Thumbnail, { ThumbnailSkeleton } from "@/components/Thumbnail";
 import Verified from "@/components/Verified";

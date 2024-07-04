@@ -1,7 +1,6 @@
-import React from "react";
-import Wrapper from "./Wrapper";
-import Toggle from "./Toggle";
-import Navigation from "./Navigation";
+import Wrapper from "@/components/dashboard/Wrapper";
+import Toggle from "@/components/dashboard/Toggle";
+import Navigation from "@/components/dashboard/Navigation";
 import { Separator } from "@/components/ui/separator";
 
 const Sidebar = () => {

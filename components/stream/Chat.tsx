@@ -12,7 +12,7 @@ import { ChatVariant, useChatSidebar } from "@/store/useChatSidebar";
 import ChatHeader, { ChatHeaderSkeleton } from "@/components/stream/ChatHeader";
 import ChatForm, { ChatFormSkeleton } from "@/components/stream/ChatForm";
 import ChatList, { ChatListSkeleton } from "@/components/stream/ChatList";
-import ChatCommunity from "./ChatCommunity";
+import ChatCommunity from "@/components/stream/ChatCommunity";
 
 interface ChatProps {
   viewerName: string;

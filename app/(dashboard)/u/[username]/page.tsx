@@ -1,7 +1,6 @@
 import StreamPlayer from "@/components/stream/StreamPlayer";
 import { getUserByUsername } from "@/lib/userService";
 import { currentUser } from "@clerk/nextjs/server";
-import React from "react";
 
 interface PageProps {
   params: {

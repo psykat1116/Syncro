@@ -1,8 +1,8 @@
 "use client";
 import { format } from "date-fns";
+import { ReceivedChatMessage } from "@livekit/components-react";
 
 import { stringToColor } from "@/lib/utils";
-import { ReceivedChatMessage } from "@livekit/components-react";
 
 interface ChatMessageProps {
   data: ReceivedChatMessage;

@@ -1,5 +1,5 @@
-import { getSelf } from "./authService";
-import { db } from "./db";
+import { db } from "@/lib/db";
+import { getSelf } from "@/lib/authService";
 
 export const getStream = async () => {
   let userId;

@@ -1,8 +1,6 @@
-import React from "react";
-
 import { getStream } from "@/lib/feedService";
-import ResultCard, { ResultCardSkeleton } from "@/components/home/ResultCard";
 import { Skeleton } from "@/components/ui/skeleton";
+import ResultCard, { ResultCardSkeleton } from "@/components/home/ResultCard";
 
 const Result = async () => {
   const data = await getStream();

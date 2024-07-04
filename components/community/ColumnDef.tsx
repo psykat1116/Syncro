@@ -1,10 +1,10 @@
 "use client";
-import { ArrowUpDown, MoreHorizontal } from "lucide-react";
-
+import { ArrowUpDown } from "lucide-react";
 import { ColumnDef } from "@tanstack/react-table";
+
 import { Button } from "@/components/ui/button";
-import UserAvatar from "../UserAvatar";
-import UnblockButton from "./UnblockButton";
+import UserAvatar from "@/components/UserAvatar";
+import UnblockButton from "@/components/community/UnblockButton";
 
 export type Block = {
   id: string;

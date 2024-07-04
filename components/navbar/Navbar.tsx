@@ -1,7 +1,6 @@
-import React from 'react'
-import Logo from './Logo'
-import Search from './Search'
-import Action from './Action'
+import Logo from '@/components/navbar/Logo'
+import Search from '@/components/navbar/Search'
+import Action from '@/components/navbar/Action'
 
 const Navbar = () => {
   return (

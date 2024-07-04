@@ -1,9 +1,9 @@
 "use server";
-
-import { getSelf } from "@/lib/authService";
-import { db } from "@/lib/db";
 import { User } from "@prisma/client";
 import { revalidatePath } from "next/cache";
+
+import { db } from "@/lib/db";
+import { getSelf } from "@/lib/authService";
 
 export const updateUser = async (values: Partial<User>) => {
   const self = await getSelf();

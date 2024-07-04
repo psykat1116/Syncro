@@ -1,6 +1,7 @@
-import { db } from "./db";
-import { getSelf } from "./authService";
-import { Stream, User } from "@prisma/client";
+import { User } from "@prisma/client";
+
+import { db } from "@/lib/db";
+import { getSelf } from "@/lib/authService";
 
 export const getRecommendations = async () => {
   let userId;

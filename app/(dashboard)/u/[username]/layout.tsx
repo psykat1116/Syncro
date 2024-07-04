@@ -1,6 +1,6 @@
-import { getSelfByUsername } from "@/lib/authService";
 import { redirect } from "next/navigation";
-import React from "react";
+
+import { getSelfByUsername } from "@/lib/authService";
 import Navbar from "@/components/dashboard/Navbar";
 import Sidebar from "@/components/dashboard/Sidebar";
 import Container from "@/components/dashboard/Container";

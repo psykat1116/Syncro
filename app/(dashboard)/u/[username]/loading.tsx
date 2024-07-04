@@ -1,4 +1,3 @@
-import React from "react";
 import { StreamPlayerSkeleton } from "@/components/stream/StreamPlayer";
 
 const Loading = () => {
