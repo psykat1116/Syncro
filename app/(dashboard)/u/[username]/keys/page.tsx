@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { Link } from "lucide-react";
 
 import ConnectModal from "@/components/keys/ConnectModal";
@@ -5,6 +6,16 @@ import KeyCard from "@/components/keys/KeyCard";
 import URLCard from "@/components/keys/URLCard";
 import { getSelf } from "@/lib/authService";
 import { getStreamByUserId } from "@/lib/streamservice";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { username: string };
+}): Promise<Metadata> {
+  return {
+    title: `${params.username}'s Stream Keys | Syncro`,
+  };
+}
 
 const Page = async () => {
   const self = await getSelf();

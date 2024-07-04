@@ -1,8 +1,19 @@
+import { Metadata } from "next";
 import { format } from "date-fns";
 
 import { getBlockedUsers } from "@/lib/blockService";
 import { DataTable } from "@/components/ui/DataTable";
 import { columns } from "@/components/community/ColumnDef";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { username: string };
+}): Promise<Metadata> {
+  return {
+    title: `${params.username}'s Community | Syncro`,
+  };
+}
 
 const Page = async () => {
   const data = await getBlockedUsers();

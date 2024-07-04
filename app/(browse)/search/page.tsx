@@ -1,6 +1,17 @@
+import { Metadata } from "next";
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import Results, { ResultSkeleton } from "@/components/search/Result";
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: { term?: string };
+}): Promise<Metadata> {
+  return {
+    title: `Search results for "${searchParams.term}" | Syncro`,
+  };
+}
 
 interface PageProps {
   searchParams: {

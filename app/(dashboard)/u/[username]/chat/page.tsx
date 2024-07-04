@@ -1,8 +1,19 @@
+import { Metadata } from "next";
 import { Settings } from "lucide-react";
 
 import ToggleCard from "@/components/chat/ToggleCard";
 import { getSelf } from "@/lib/authService";
 import { getStreamByUserId } from "@/lib/streamservice";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { username: string };
+}): Promise<Metadata> {
+  return {
+    title: `${params.username}'s Stream Chat Settings | Syncro`,
+  };
+}
 
 const Page = async () => {
   const self = await getSelf();
