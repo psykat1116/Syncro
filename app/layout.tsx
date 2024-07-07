@@ -22,8 +22,6 @@ export const metadata: Metadata = {
     {
       url: "/Stream.svg",
       href: "/Stream.svg",
-      type: "image/svg+xml",
-      sizes: "16x16",
     },
   ],
   applicationName: "Syncro",
