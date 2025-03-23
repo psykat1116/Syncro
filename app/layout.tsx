@@ -39,7 +39,10 @@ export const metadata: Metadata = {
     "Twitch Clone",
     "twitch",
   ],
-  authors: { url: "https://github.com/psykat1116" },
+  authors: {
+    name: "Saikat Samanta",
+    url: "https://portfolio-one-gilt-34.vercel.app/",
+  },
   openGraph: {
     title: "Syncro | Stream Your World Live",
     description:
