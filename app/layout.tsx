@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import { dark } from "@clerk/themes";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "sonner";
+import { Analytics } from "@vercel/analytics/next";
 
 import { ThemeProvider } from "@/provider/ThemeProvider";
 
@@ -79,6 +80,7 @@ export default function RootLayout({
           >
             <Toaster theme="light" position="bottom-center" />
             {children}
+            <Analytics />
           </ThemeProvider>
         </body>
       </html>
